@@ -37,6 +37,10 @@ jobs:
     - name: Apply USB Config # for 5.4. branch only
       if: ${{ matrix.branch == 'linux-msft-wsl-5.4.y' }}
       working-directory: ./kernel-${{ matrix.branch }}
+      run: scripts/kconfig/merge_config.sh -m -y .config ../waydroid.config
+
+    - name: Apply Waydroid Config # for Waydroid config
+      working-directory: ./kernel-${{ matrix.branch }}
       run: scripts/kconfig/merge_config.sh -m -y .config ../usb.config
 
     - name: Apply CAN Config
