@@ -16,10 +16,10 @@ jobs:
     steps:
 
     - name: Checkout WSL2 Kernel Builder
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Checkout WSL2 Kernel Repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: 'microsoft/WSL2-Linux-Kernel'
         ref: ${{ matrix.branch }}
